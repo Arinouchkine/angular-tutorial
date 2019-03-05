@@ -7,6 +7,7 @@ import { FormsModule} from "@angular/forms";
 import { AvatarComponentComponent } from './avatar-component/avatar-component.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import {TimeAgoPipe} from 'time-ago-pipe';
+import { TweetComponent } from './tweet/tweet.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import {TimeAgoPipe} from 'time-ago-pipe';
     AvatarComponentComponent,
     TimelineComponent,
     TimeAgoPipe,
+    TweetComponent,
   ],
   imports: [
     BrowserModule,

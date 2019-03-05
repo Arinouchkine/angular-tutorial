@@ -5,12 +5,8 @@
 </div>
 
 <div *ngFor="let tweet of tweets">
-  <div class="content">
-    <strong>{{tweet.user}}</strong><span class="grey">{{tweet.created_at| timeAgo}}</span>
-    <p>{{tweet.text}}</p>
-  </div>
-  <div  class="red" ><i [ngClass]="{'far': !tweet.likeB, 'fas': tweet.likeB}"  class="fa-heart clicable" (click)="likeAdd(tweet.id)"></i><span *ngIf="tweet.like"> {{tweet.like}}</span></div>
-</div>
+  <app-tweet [tweet]="tweet"></app-tweet>
+ </div>
 <textarea class="tweet-area" #tweetInput>
 
 </textarea>

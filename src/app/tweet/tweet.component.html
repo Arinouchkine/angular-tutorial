@@ -1,0 +1,5 @@
+<div class="content">
+  <strong>{{tweet.user}}</strong><span class="grey">{{tweet.created_at| timeAgo}}</span>
+  <p>{{tweet.text}}</p>
+</div>
+<div  class="red" ><i [ngClass]="{'far': !tweet.likeB, 'fas': tweet.likeB}"  class="fa-heart clicable" (click)="likeAdd()"></i><span *ngIf="tweet.like"> {{tweet.like}}</span></div>

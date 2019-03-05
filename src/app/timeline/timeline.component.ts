@@ -44,20 +44,7 @@ export class TimelineComponent implements OnInit {
     this.id++;
   }
 
-  likeAdd(id)
-  {
-   let tweet = this.tweets.find(value => {return value.id == id});
-   if (tweet.likeB)
-   {
-     tweet.like--;
-     tweet.likeB = false;
-   }
-   else {
-     tweet.like++;
-     tweet.likeB = true;
-   }
 
-  }
 
 
   ngOnInit() {
