@@ -1,0 +1,7 @@
+<div *ngFor="let tweet of tweets">
+  <div class="content">
+    <strong>{{tweet.user}}</strong><span class="grey">{{tweet.created_at| timeAgo}}</span>
+    <p>{{tweet.text}}</p>
+  </div>
+
+</div>
