@@ -1,7 +1,7 @@
 <div>
   <h1>Connexion</h1>
-  <input type="text" #userInput><br>
-  <button (click)="userAdd(userInput.value)"> connect</button>
+  <h2><span *ngIf="user=='';else elseModul">Veuillez vous connecter</span><ng-template #elseModul>Bonjour, {{user|uppercase}}</ng-template></h2>
+  <input type="text"  [(ngModel)]="user" >
 </div>
 
 <div *ngFor="let tweet of tweets">
@@ -15,4 +15,4 @@
 
 </textarea>
 <br>
-<button (click)="tweetAdd(tweetInput.value)" [ngClass]="{'dis': !userB}" [disabled]="!userB" class="tweet-add">Twitter</button>
+<button (click)="tweetAdd(tweetInput.value)" [ngClass]="{'dis': user==''}" [disabled]="user==''" class="tweet-add">Twitter</button>

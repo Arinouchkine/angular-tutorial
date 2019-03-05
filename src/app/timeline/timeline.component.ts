@@ -9,7 +9,6 @@ export class TimelineComponent implements OnInit {
 
   id:number = 3;
   user:string = "";
-  userB:boolean = false;
 
   tweets: Tweet[] = [
     {
@@ -60,12 +59,6 @@ export class TimelineComponent implements OnInit {
 
   }
 
-
-  userAdd(user)
-  {
-    this.user = user;
-    this.userB = true;
-  }
 
   ngOnInit() {
   }
