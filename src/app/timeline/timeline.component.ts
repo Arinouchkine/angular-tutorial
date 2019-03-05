@@ -8,20 +8,25 @@ import {Tweet} from '../tweet'
 export class TimelineComponent implements OnInit {
 
   id:number = 3;
-  user:string = "Me" ;
+  user:string = "";
+  userB:boolean = false;
 
   tweets: Tweet[] = [
     {
       created_at: 'Wed Apr 05 12:30:12 +0000 2017',
       id: 1,
       text: 'Je mets les pieds où je veux, Little John… et c\'est souvent dans la gueule.',
-      user: 'James Braddock'
+      user: 'James Braddock',
+      like: 0,
+      likeB: false,
     },
     {
       created_at: 'Thu Apr 06 15:24:15 +0000 2017',
       id: 2,
       text: 'Qui a deux pouces et qui s\'en fout ? Bob Kelso !',
-      user: 'Bob kelso'
+      user: 'Bob kelso',
+      like: 0,
+      likeB: false,
     },
   ];
 
@@ -32,10 +37,34 @@ export class TimelineComponent implements OnInit {
       created_at: new Date().toISOString(),
       id: this.id,
       text: tweetInput,
-      user: this.user
+      user: this.user,
+      like: 0,
+      likeB : false
     }
     this.tweets.push(tweet);
     this.id++;
+  }
+
+  likeAdd(id)
+  {
+   let tweet = this.tweets.find(value => {return value.id == id});
+   if (tweet.likeB)
+   {
+     tweet.like--;
+     tweet.likeB = false;
+   }
+   else {
+     tweet.like++;
+     tweet.likeB = true;
+   }
+
+  }
+
+
+  userAdd(user)
+  {
+    this.user = user;
+    this.userB = true;
   }
 
   ngOnInit() {
