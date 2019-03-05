@@ -3,5 +3,9 @@
     <strong>{{tweet.user}}</strong><span class="grey">{{tweet.created_at| timeAgo}}</span>
     <p>{{tweet.text}}</p>
   </div>
-
 </div>
+<textarea class="tweet-area" #tweetInput>
+
+</textarea>
+<br>
+<button (click)="tweetAdd(tweetInput.value)" class="tweet-add">Twitter</button>

@@ -7,6 +7,9 @@ import {Tweet} from '../tweet'
 })
 export class TimelineComponent implements OnInit {
 
+  id:number = 3;
+  user:string = "Me" ;
+
   tweets: Tweet[] = [
     {
       created_at: 'Wed Apr 05 12:30:12 +0000 2017',
@@ -23,6 +26,17 @@ export class TimelineComponent implements OnInit {
   ];
 
   constructor() { }
+
+  tweetAdd(tweetInput: string){
+    let tweet : Tweet = {
+      created_at: new Date().toISOString(),
+      id: this.id,
+      text: tweetInput,
+      user: this.user
+    }
+    this.tweets.push(tweet);
+    this.id++;
+  }
 
   ngOnInit() {
   }
